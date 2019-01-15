@@ -1,0 +1,18 @@
+<?php
+/** @var Boangri\Ololo\Block\Portfolio $block */
+?>
+<h1>Портфолио</h1>
+<p>
+<table>
+    Все проекты в следующей таблице являются вымышленными, поэтому даже не пытайтесь перейти по приведенным ссылкам.
+    <tr><td>Год</td><td>Проект</td><td>Описание</td></tr>
+<?php foreach($block->getProjects() as $project): ?>
+    <?php /** @var Boangri\Ololo\Model\Portfolio */ ?>
+    <tr>
+        <td><?php echo $project->getYear()?></td>
+        <td><?php echo $project->getSite()?></td>
+        <td><?php echo $project->getDescription()?></td>
+    </tr>
+<?php endforeach; ?>
+</table>
+</p>
