@@ -1,0 +1,17 @@
+{
+    "boangri_portfolio": {
+        "column": {
+            "id": true,
+            "year": true,
+            "site": true,
+            "description": true,
+            "created_at": true
+        },
+        "index": {
+            "BOANGRI_PORTFOLIO_DESCRIPTION": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

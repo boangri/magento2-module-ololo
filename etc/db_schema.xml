@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="boangri_portfolio" resource="default" engine="innodb" comment="Ololo Portfolio Items">
+        <column xsi:type="smallint" name="id" padding="6" unsigned="true" nullable="false" identity="true"
+                comment="Item ID"/>
+        <column xsi:type="varchar" name="year" nullable="false" length="4" comment="Year"/>
+        <column xsi:type="varchar" name="site" nullable="false" length="255" comment="Site"/>
+        <column xsi:type="text" name="description" nullable="true" comment="Item Description"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Item Creation Time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <index referenceId="ITEM_DESCRIPTION" indexType="fulltext">
+            <column name="description"/>
+        </index>
+    </table>
+</schema>

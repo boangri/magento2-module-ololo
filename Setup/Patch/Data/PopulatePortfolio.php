@@ -1,36 +1,20 @@
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
-namespace Boangri\Ololo\Setup;
+namespace Boangri\Ololo\Setup\Patch\Data;
 
-use \Magento\Framework\Setup\UpgradeDataInterface;
-use \Magento\Framework\Setup\ModuleContextInterface;
-use \Magento\Framework\Setup\ModuleDataSetupInterface;
+use Magento\Framework\Setup\ModuleDataSetupInterface;
+use Magento\Framework\Setup\Patch\DataPatchInterface;
 
 /**
- * Class UpgradeData
- *
- * @package Boangri\Ololo\Setup
- */
-class UpgradeData implements UpgradeDataInterface
+* Patch is mechanism, that allows to do atomic upgrade data changes
+*/
+class PopulatePortfolio implements DataPatchInterface
 {
-
-    /**
-     * Creates portfolio
-     *
-     * @param ModuleDataSetupInterface $setup
-     * @param ModuleContextInterface $context
-     * @return void
-     */
-    public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
-    {
-        $setup->startSetup();
-
-        if (!$context->getVersion()
-            || version_compare($context->getVersion(), '0.1.4') < 0
-        ) {
-            $tableName = $setup->getTable('boangri_portfolio');
-
-            $data = [
+    private $data = [
                 [
                     'year' => '2012',
                     'site' => 'http://DunkelBeer.ru',
@@ -73,11 +57,44 @@ class UpgradeData implements UpgradeDataInterface
                 ],
             ];
 
-            $setup
-                ->getConnection()
-                ->insertMultiple($tableName, $data);
-        }
+    /**
+     * @var ModuleDataSetupInterface $moduleDataSetup
+     */
+    private $moduleDataSetup;
 
-        $setup->endSetup();
+    /**
+     * @param ModuleDataSetupInterface $moduleDataSetup
+     */
+    public function __construct(ModuleDataSetupInterface $moduleDataSetup)
+    {
+        $this->moduleDataSetup = $moduleDataSetup;
+    }
+
+    /**
+     * Do Upgrade
+     *
+     * @return void
+     */
+    public function apply()
+    {
+        $this->moduleDataSetup->getConnection()->insertMultiple('boangri_portfolio', $this->data);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAliases()
+    {
+        return [];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function getDependencies()
+    {
+        return [
+
+        ];
     }
 }
