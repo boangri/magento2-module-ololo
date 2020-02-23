@@ -6,8 +6,10 @@
 
 namespace Boangri\Ololo\Setup\Patch\Data;
 
+use Exception;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
+use Magento\Store\Model\Group;
 use Magento\Store\Model\GroupFactory;
 use Magento\Store\Model\WebsiteFactory;
 
@@ -45,7 +47,7 @@ class CreateStore implements DataPatchInterface
         $this->groupFactory = $groupFactory;
     }
 
-    protected function getWebsiteId($code)
+    public function getWebsiteId($code)
     {
         $website = $this->websiteFactory->create()->load($code, 'code');
         return $website->getId();
@@ -55,7 +57,7 @@ class CreateStore implements DataPatchInterface
      * Do Upgrade
      *
      * @return void
-     * @throws \Exception
+     * @throws Exception
      */
     public function apply()
     {
@@ -83,5 +85,15 @@ class CreateStore implements DataPatchInterface
         return [
             CreateWebsite::class
         ];
+    }
+
+    /**
+     * @return int
+     */
+    public function getGroupId()
+    {
+        /** @var Group $group */
+        $group = $this->groupFactory->create()->load('ololo', 'code');
+        return $group->getId();
     }
 }
