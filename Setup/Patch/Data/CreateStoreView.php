@@ -83,4 +83,15 @@ class CreateStoreView implements DataPatchInterface
             CreateStore::class
         ];
     }
+
+    /**
+     * @return int
+     * @throws LocalizedException
+     */
+    public function getStoreId()
+    {
+        $store = $this->storeFactory->create();
+        $store->load('ololo', 'code');
+        return $store->getId();
+    }
 }
