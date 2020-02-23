@@ -4,7 +4,7 @@
         <referenceContainer name="content">
             <block name="ololo.portfolio" template="Boangri_Ololo::portfolio.phtml" >
                 <arguments>
-                    <argument name="model_view" xsi:type="object"></argument>
+                    <argument name="view_model" xsi:type="object">Boangri\Ololo\ViewModel\Portfolio</argument>
                 </arguments>
             </block>
         </referenceContainer>
