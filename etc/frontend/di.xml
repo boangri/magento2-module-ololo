@@ -16,4 +16,9 @@
             <argument name="logger" xsi:type="object">SergeiLogger</argument>
         </arguments>
     </type>
+<!--    <type name="Magento\Framework\View\Result\Page">-->
+<!--        <arguments>-->
+<!--            <argument name="template" xsi:type="string">Boangri_Ololo::root.phtml</argument>-->
+<!--        </arguments>-->
+<!--    </type>-->
 </config>
