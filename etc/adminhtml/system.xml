@@ -7,7 +7,7 @@
         <section id="ololo" translate="label" sortOrder="9" showInDefault="1" showInWebsite="0" showInStore="0">
             <label>Ololo Team</label>
             <tab>boangri</tab>
-            <resource>Boangri_Sergei::items</resource>
+            <resource>Boangri_Ololo::portfolio</resource>
             <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
                 <label>Project creation by schedule</label>
                 <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
