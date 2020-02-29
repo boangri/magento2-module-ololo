@@ -14,7 +14,16 @@
     <type name="Boangri\Ololo\Controller\Router">
         <arguments>
             <argument name="logger" xsi:type="object">SergeiLogger</argument>
+            <argument name="actions" xsi:type="array">
+                <item name="index" xsi:type="string">index</item>
+                <item name="services" xsi:type="string">services</item>
+                <item name="portfolio" xsi:type="string">portfolio</item>
+                <item name="contacts" xsi:type="string">contacts</item>
+            </argument>
         </arguments>
+    </type>
+    <type name="Boangri\Ololo\Controller\Router">
+
     </type>
 <!--    <type name="Magento\Framework\View\Result\Page">-->
 <!--        <arguments>-->
