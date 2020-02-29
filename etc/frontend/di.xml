@@ -22,9 +22,6 @@
             </argument>
         </arguments>
     </type>
-    <type name="Boangri\Ololo\Controller\Router">
-
-    </type>
 <!--    <type name="Magento\Framework\View\Result\Page">-->
 <!--        <arguments>-->
 <!--            <argument name="template" xsi:type="string">Boangri_Ololo::root.phtml</argument>-->
