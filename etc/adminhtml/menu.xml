@@ -2,7 +2,8 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
         <add id="Boangri_Ololo::portfolio" title="Ololo Team Portfolio"
-             module="Boangri_Sergei" resource="Boangri_Sergei::items"
+             module="Boangri_Ololo" resource="Boangri_Ololo::portfolio"
+             parent="Magento_Backend::system_other_settings"
              translate="title" sortOrder="800" action="ololo"/>
     </menu>
 </config>

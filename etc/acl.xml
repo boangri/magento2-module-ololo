@@ -3,7 +3,7 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Boangri_Ololo::Portfolio" title="Ololo Team Portfolio"
+                <resource id="Boangri_Ololo::portfolio" title="Ololo Team Portfolio"
                           translate="title" sortOrder="910"/>
             </resource>
         </resources>
