@@ -4,12 +4,12 @@ namespace Boangri\Ololo\Model;
 
 use Boangri\Ololo\Api\Data\ProjectInterface;
 use Boangri\Ololo\Api\ProjectRepositoryInterface;
-use Boangri\Ololo\Model\ResourceModel\Portfolio\CollectionFactory;
-use Magento\Framework\Api\SearchResultsInterface;
 use Boangri\Ololo\Model\PortfolioFactory as ProjectFactory;
+use Boangri\Ololo\Model\ResourceModel\Portfolio\CollectionFactory;
 use Magento\Framework\Api\SearchCriteriaInterface;
-use Magento\Framework\Exception\NoSuchEntityException;
+use Magento\Framework\Api\SearchResultsInterface;
 use Magento\Framework\Api\SearchResultsInterfaceFactory;
+use Magento\Framework\Exception\NoSuchEntityException;
 
 class ProjectRepository implements ProjectRepositoryInterface
 {
